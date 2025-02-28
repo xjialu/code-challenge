@@ -33,7 +33,7 @@ const WalletPage: React.FC<Props> = (props: Props) => {
       })
       .catch((error) => {
         console.err(error);
-      });
+        // [6 - Syntax Issues] console.err should be console.error instead
   }, []);
 
   const getPriority = (blockchain: any): number => {
@@ -91,12 +91,13 @@ const WalletPage: React.FC<Props> = (props: Props) => {
 
   const rows = sortedBalances.map(
     (balance: FormattedWalletBalance, index: number) => {
+      // [2 - Not type safe] Wrong type asserted when mapping over sortedBalances. Should make use of formattedBalances.
       const usdValue = prices[balance.currency] * balance.amount;
       return (
         <WalletRow
           className={classes.row}
           key={index}
-          // [5 - Bad Practices] Hardcoding index as key is bad practice.
+          // [5 - Bad Practices] Hardcoding index as key is bad practice. Will be challenging to track changes in the future.
           amount={balance.amount}
           usdValue={usdValue}
           formattedAmount={balance.formatted}
@@ -107,3 +108,9 @@ const WalletPage: React.FC<Props> = (props: Props) => {
 
   return <div {...rest}>{rows}</div>;
 };
+
+
+// General Comments:
+// 1. No error handling UI
+// 2. No loading state
+// 3. 
