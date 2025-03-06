@@ -9,8 +9,6 @@ export default function Home() {
         <ThemeSwitcher />
       </div>
 
-      {/* Floating elements - mathematical shapes */}
-
       <div className="relative">
         <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-xl blur-sm"></div>
         <div className="flex flex-col gap-5 border border-foreground/10 bg-background/80 rounded-xl lg:p-8 p-2 items-center justify-center relative shadow-lg">

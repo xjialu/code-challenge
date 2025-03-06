@@ -127,18 +127,14 @@ export function SwapConfirmModal({
 
   const handleDragEnd = () => {
     if (!isConfirmed) {
-      // Animate back to start
       setIsDragging(false);
-
-      // Animate the slider back to start
       const startTime = Date.now();
       const startPosition = dragPosition;
-      const duration = 300; // ms
+      const duration = 300;
 
       const animateBack = () => {
         const elapsed = Date.now() - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        // Ease out cubic function for smooth deceleration
         const easeOut = 1 - Math.pow(1 - progress, 3);
         const newPosition = startPosition * (1 - easeOut);
 
@@ -194,7 +190,6 @@ export function SwapConfirmModal({
           </DialogHeader>
 
           <div className="mt-4 sm:mt-6 space-y-4 sm:space-y-6 relative">
-            {/* Summary */}
             <div className="flex flex-col items-center space-y-3 p-3 sm:p-4 bg-muted/30 rounded-lg">
               <div className="flex items-center gap-3 sm:gap-4">
                 <div className="flex items-center justify-center">
@@ -233,7 +228,7 @@ export function SwapConfirmModal({
               </div>
             </div>
 
-            {/* Swipe to confirm - improved for mobile */}
+            {/* Swipe to confirm*/}
             <div
               ref={sliderRef}
               className="mt-4 sm:mt-6 h-12 sm:h-14 rounded-full bg-muted/30 border border-foreground/10 relative overflow-hidden shadow-inner"
@@ -258,7 +253,7 @@ export function SwapConfirmModal({
                 }}
               />
 
-              {/* Thumb with pulsing effect */}
+              {/* thumb */}
               <div
                 ref={thumbRef}
                 className={`absolute top-1/2 -translate-y-1/2 h-9 w-9 sm:h-10 sm:w-10 bg-foreground rounded-full flex items-center justify-center cursor-grab z-10 shadow-md ${
@@ -277,7 +272,6 @@ export function SwapConfirmModal({
                 <div className="absolute inset-0 rounded-full dark:bg-white opacity-20 dark:animate-ping animate-pulse"></div>
               </div>
 
-              {/* Text */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <span className="text-xs sm:text-sm font-medium text-foreground/70">
                   Swipe to confirm

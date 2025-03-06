@@ -32,7 +32,6 @@ export function TokenDisplay({ symbol }: TokenDisplayProps) {
           className="rounded-full"
           onLoad={() => setIsLoading(false)}
           onError={() => {
-            // Directly use placeholder instead of trying PNG
             setImgSrc(
               `https://via.placeholder.com/20?text=${symbol.charAt(0)}`
             );

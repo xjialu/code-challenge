@@ -107,12 +107,11 @@ export function Swap() {
   };
 
   const handleConfirmSwap = () => {
-    // Here you would implement the actual swap logic
-    console.log("Swap confirmed!", {
-      from: { amount: fromAmount, currency: fromCrypto },
-      to: { amount: toAmount, currency: toCrypto },
-    });
-    setIsConfirmModalOpen(false);
+    // console.log("Swap confirmed!", {
+    //   from: { amount: fromAmount, currency: fromCrypto },
+    //   to: { amount: toAmount, currency: toCrypto },
+    // });
+    // setIsConfirmModalOpen(false);
 
     // Reset form after successful swap
     setFromAmount("");
