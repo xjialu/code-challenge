@@ -52,7 +52,7 @@ export function TokenDisplay({ symbol }: TokenDisplayProps) {
           </div>
         ) : (
           <Image
-            src={`/tokens/${symbol.toLowerCase()}.svg`}
+            src={`/tokens/${symbol}.svg`}
             alt={symbol}
             width={20}
             height={20}
