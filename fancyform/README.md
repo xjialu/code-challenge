@@ -1,6 +1,7 @@
 ## Fancy Form
 
-Link to Vercel deployment:
+Link to Vercel deployment: 
+[Click here](fancyform-swc.vercel.app)
 
 Or, if you prefer to build locally, install dependencies and run the development server:
 
